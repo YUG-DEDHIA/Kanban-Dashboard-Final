@@ -14,7 +14,7 @@ const useStore = create((set) => ({
         ticket.id === id ? { ...ticket, status: newStatus } : ticket
       ),
     })),
-  
+
   updateTicketContent: (id, newTitle, newDescription) =>
     set((state) => ({
       tickets: state.tickets.map((ticket) =>

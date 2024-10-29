@@ -18,7 +18,7 @@ function App() {
   }, {});
 
   return (
-    <div className="App">
+    <div className="App bg-gray-100 min-h-screen">
       <Header
         ticketCounts={Object.fromEntries(
           Object.entries(ticketsByStatus).map(([status, tickets]) => [status, tickets.length])
@@ -26,7 +26,7 @@ function App() {
         liveMode={liveMode}
         toggleLiveMode={toggleLiveMode}
       />
-      <div className="kanban-board flex flex-row space-x-4 p-4 overflow-x-auto">
+      <div className="kanban-board flex flex-row space-x-4 p-6 overflow-x-auto scrollbar-thin scrollbar-thumb-blue-400 scrollbar-track-blue-100">
         {['To Do', 'In Progress', 'Blocked', 'Done'].map((status) => (
           <SwimLane key={status} title={status} tickets={ticketsByStatus[status] || []} />
         ))}

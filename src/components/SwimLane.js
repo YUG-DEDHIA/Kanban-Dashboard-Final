@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import TicketCard from './TicketCard';
-//  This component will be used to display a swimlane of tickets
+
 const SwimLane = ({ title, tickets }) => {
   const [visibleTickets, setVisibleTickets] = useState([]);
 
@@ -19,10 +19,10 @@ const SwimLane = ({ title, tickets }) => {
 
   return (
     <div
-      className="swimlane flex-1 bg-white border border-gray-300 p-4 rounded-md shadow-md max-h-screen overflow-y-auto"
+      className="swimlane flex-1 min-w-[300px] bg-blue-50 border border-blue-300 p-4 rounded-lg shadow-md max-h-screen overflow-y-auto"
       onScroll={handleScroll}
     >
-      <h2 className="text-xl font-semibold mb-4 text-gray-700 border-b pb-2">
+      <h2 className="text-2xl font-semibold mb-4 text-blue-600 border-b-2 border-blue-400 pb-2">
         {title} ({tickets.length})
       </h2>
       <div className="space-y-4">
@@ -32,7 +32,6 @@ const SwimLane = ({ title, tickets }) => {
       </div>
     </div>
   );
-  
 };
 
 export default SwimLane;
